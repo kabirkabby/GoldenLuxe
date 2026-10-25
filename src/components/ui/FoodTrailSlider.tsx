@@ -63,8 +63,8 @@ export function FoodTrailSlider() {
   }, [nextSlide, isPaused]);
 
   return (
-    <div 
-      className="relative h-[480px] sm:h-[540px] w-full rounded-2xl overflow-hidden border border-neutral-200/80 shadow-2xl bg-neutral-950 group select-none"
+    <div
+      className="relative h-[640px] sm:h-[680px] w-full rounded-2xl overflow-hidden border border-neutral-200/80 shadow-2xl bg-neutral-950 group select-none"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
     >
@@ -74,9 +74,8 @@ export function FoodTrailSlider() {
         return (
           <div
             key={slide.id}
-            className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
-              isActive ? "opacity-100 z-10" : "opacity-0 z-0 pointer-events-none"
-            }`}
+            className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${isActive ? "opacity-100 z-10" : "opacity-0 z-0 pointer-events-none"
+              }`}
           >
             <Image
               src={slide.image}
@@ -84,9 +83,8 @@ export function FoodTrailSlider() {
               fill
               priority={index === 0}
               sizes="(max-width: 1024px) 100vw, 40vw"
-              className={`object-cover object-center w-full h-full transition-transform duration-[6000ms] ease-out ${
-                isActive ? "scale-105" : "scale-100"
-              }`}
+              className={`object-cover object-center w-full h-full transition-transform duration-[6000ms] ease-out ${isActive ? "scale-105" : "scale-100"
+                }`}
             />
             {/* Gradient Overlays */}
             <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-black/10" />
@@ -96,7 +94,7 @@ export function FoodTrailSlider() {
               <span className="text-[10px] uppercase font-mono tracking-widest text-[#DFCA8A] bg-black/60 backdrop-blur-md px-2.5 py-1 rounded-sm border border-[#DFCA8A]/30 inline-block mb-2">
                 {slide.tag}
               </span>
-              <h3 className="font-serif text-2xl sm:text-3xl font-light text-white leading-tight">
+              <h3 className="font-sans font-medium text-2xl sm:text-3xl text-white leading-tight">
                 {slide.title}
               </h3>
               <p className="text-xs sm:text-sm text-neutral-300 font-light mt-1.5 max-w-md line-clamp-2 leading-relaxed">
@@ -114,9 +112,8 @@ export function FoodTrailSlider() {
             key={idx}
             type="button"
             onClick={() => setCurrentIndex(idx)}
-            className={`h-1.5 rounded-full transition-all duration-300 ${
-              idx === currentIndex ? "w-6 bg-[#DFCA8A]" : "w-1.5 bg-white/40 hover:bg-white"
-            }`}
+            className={`h-1.5 rounded-full transition-all duration-300 ${idx === currentIndex ? "w-6 bg-[#DFCA8A]" : "w-1.5 bg-white/40 hover:bg-white"
+              }`}
             aria-label={`Go to slide ${idx + 1}`}
           />
         ))}

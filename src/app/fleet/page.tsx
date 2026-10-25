@@ -67,7 +67,7 @@ export default function FleetPage() {
               </span>
             </div>
 
-            <h1 className="font-serif text-4xl sm:text-6xl font-light tracking-tight text-white leading-tight">
+            <h1 className="font-sans font-medium text-4xl sm:text-6xl tracking-tight text-white leading-tight">
               Executive Fleet & <br />
               <span className="gold-gradient-text italic font-light">Chauffeur Standards</span>
             </h1>
@@ -83,8 +83,8 @@ export default function FleetPage() {
       <section className="py-20 sm:py-24 max-w-7xl mx-auto px-4 sm:px-8">
         <div className="bg-white p-8 sm:p-12 border border-neutral-200/90 shadow-[0_4px_25px_rgba(0,0,0,0.02)] grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="space-y-3">
-            <span className="font-serif text-3xl font-light text-[#C2983B]">01</span>
-            <h4 className="font-serif text-xl font-normal text-neutral-900">
+            <span className="font-sans font-medium text-2xl text-[#C2983B]">01</span>
+            <h4 className="font-sans font-medium text-lg text-neutral-900">
               Verified & Respectful
             </h4>
             <p className="text-xs sm:text-sm text-neutral-600 font-light leading-relaxed">
@@ -93,8 +93,8 @@ export default function FleetPage() {
           </div>
 
           <div className="space-y-3">
-            <span className="font-serif text-3xl font-light text-[#C2983B]">02</span>
-            <h4 className="font-serif text-xl font-normal text-neutral-900">
+            <span className="font-sans font-medium text-2xl text-[#C2983B]">02</span>
+            <h4 className="font-sans font-medium text-lg text-neutral-900">
               100% Punctual Arrival
             </h4>
             <p className="text-xs sm:text-sm text-neutral-600 font-light leading-relaxed">
@@ -103,8 +103,8 @@ export default function FleetPage() {
           </div>
 
           <div className="space-y-3">
-            <span className="font-serif text-3xl font-light text-[#C2983B]">03</span>
-            <h4 className="font-serif text-xl font-normal text-neutral-900">
+            <span className="font-sans font-medium text-2xl text-[#C2983B]">03</span>
+            <h4 className="font-sans font-medium text-lg text-neutral-900">
               Old City Route Mastery
             </h4>
             <p className="text-xs sm:text-sm text-neutral-600 font-light leading-relaxed">
@@ -113,8 +113,8 @@ export default function FleetPage() {
           </div>
 
           <div className="space-y-3">
-            <span className="font-serif text-3xl font-light text-[#C2983B]">04</span>
-            <h4 className="font-serif text-xl font-normal text-neutral-900">
+            <span className="font-sans font-medium text-2xl text-[#C2983B]">04</span>
+            <h4 className="font-sans font-medium text-lg text-neutral-900">
               Zero Tourist Traps
             </h4>
             <p className="text-xs sm:text-sm text-neutral-600 font-light leading-relaxed">
@@ -130,7 +130,7 @@ export default function FleetPage() {
           <span className="text-[11px] font-semibold uppercase tracking-[0.24em] text-[#855D25]">
             Our Fleet
           </span>
-          <h2 className="font-serif text-3xl sm:text-5xl font-normal text-neutral-950">
+          <h2 className="font-sans font-medium text-3xl sm:text-5xl text-neutral-950">
             Select Your Preferred Ride
           </h2>
         </div>
@@ -156,7 +156,7 @@ export default function FleetPage() {
 
               <div className="lg:col-span-7 p-8 sm:p-10 space-y-5">
                 <div>
-                  <h3 className="font-serif text-2xl sm:text-3xl font-normal text-neutral-900 group-hover:text-[#C2983B] transition-colors">
+                  <h3 className="font-sans font-medium text-2xl sm:text-3xl text-neutral-900 group-hover:text-[#C2983B] transition-colors">
                     {v.name}
                   </h3>
                   <p className="text-xs text-[#855D25] font-semibold uppercase tracking-wider mt-1">

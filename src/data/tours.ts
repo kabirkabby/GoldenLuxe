@@ -236,9 +236,9 @@ export const TOURS_DATA: TourItinerary[] = [
       "Wagah-Attari Border Retreat Ceremony with private chauffeur service",
       "Comprehensive heritage circuit: Harmandir Sahib, Jallianwala Bagh, and Old Bazaars"
     ],
-    heroImage: "https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1600&q=85",
+    heroImage: "/images/tours/itinerary-03.jpg",
     gallery: [
-      "https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1000&q=80",
+      "/images/tours/itinerary-03.jpg",
       "https://images.unsplash.com/photo-1595846519845-68e298c2edd8?auto=format&fit=crop&w=1000&q=80",
       "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?auto=format&fit=crop&w=1000&q=80"
     ],

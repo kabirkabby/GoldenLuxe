@@ -79,7 +79,7 @@ Please prepare a personalized custom quote and itinerary.`;
             </span>
           </div>
 
-          <h1 className="font-serif text-4xl sm:text-6xl font-light tracking-tight text-white leading-tight">
+          <h1 className="font-sans font-medium text-4xl sm:text-6xl tracking-tight text-white leading-tight">
             Design Your <br />
             <span className="gold-gradient-text italic font-light">Bespoke Amritsar Journey</span>
           </h1>
@@ -98,7 +98,7 @@ Please prepare a personalized custom quote and itinerary.`;
               <div className="w-16 h-16 border border-[#25D366] text-[#25D366] mx-auto flex items-center justify-center">
                 <CheckOrnamentIcon className="w-8 h-8" />
               </div>
-              <h2 className="font-serif text-3xl sm:text-4xl font-normal text-neutral-900">
+              <h2 className="font-sans font-medium text-3xl sm:text-4xl text-neutral-900">
                 Your Plan Has Been Transferred!
               </h2>
               <p className="text-sm text-neutral-600 max-w-md mx-auto leading-relaxed font-light">
@@ -127,7 +127,7 @@ Please prepare a personalized custom quote and itinerary.`;
                   <span className="text-[10px] font-bold uppercase tracking-wider text-[#855D25]">
                     Step 01
                   </span>
-                  <h3 className="font-serif text-2xl font-normal text-neutral-900">
+                  <h3 className="font-sans font-medium text-2xl text-neutral-900">
                     Duration & Party Size
                   </h3>
                 </div>
@@ -174,7 +174,7 @@ Please prepare a personalized custom quote and itinerary.`;
                   <span className="text-[10px] font-bold uppercase tracking-wider text-[#855D25]">
                     Step 02
                   </span>
-                  <h3 className="font-serif text-2xl font-normal text-neutral-900">
+                  <h3 className="font-sans font-medium text-2xl text-neutral-900">
                     Select What You Want to Experience
                   </h3>
                   <p className="text-xs text-neutral-500 font-light mt-1">
@@ -216,7 +216,7 @@ Please prepare a personalized custom quote and itinerary.`;
                   <span className="text-[10px] font-bold uppercase tracking-wider text-[#855D25]">
                     Step 03
                   </span>
-                  <h3 className="font-serif text-2xl font-normal text-neutral-900">
+                  <h3 className="font-sans font-medium text-2xl text-neutral-900">
                     Private Vehicle Standard
                   </h3>
                 </div>
@@ -249,7 +249,7 @@ Please prepare a personalized custom quote and itinerary.`;
                   <span className="text-[10px] font-bold uppercase tracking-wider text-[#855D25]">
                     Step 04
                   </span>
-                  <h3 className="font-serif text-2xl font-normal text-neutral-900">
+                  <h3 className="font-sans font-medium text-2xl text-neutral-900">
                     Lead Traveler & Timing
                   </h3>
                 </div>

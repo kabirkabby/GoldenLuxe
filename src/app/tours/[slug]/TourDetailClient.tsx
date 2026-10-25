@@ -48,7 +48,7 @@ Hello! I would like to check availability and request a private quote for this i
         <div className="lg:col-span-8 space-y-12">
           {/* Overview Statement */}
           <section className="bg-white p-7 sm:p-9 rounded-3xl border border-[#E8DFD3] shadow-sm space-y-4">
-            <h2 className="font-serif text-2xl font-bold text-[#0B132B]">
+            <h2 className="font-sans font-medium text-2xl text-[#0B132B]">
               Journey Overview
             </h2>
             <p className="text-sm text-gray-700 leading-relaxed font-light">
@@ -78,7 +78,7 @@ Hello! I would like to check availability and request a private quote for this i
                 <span className="text-xs font-bold uppercase tracking-widest text-[#855D25]">
                   Detailed Schedule
                 </span>
-                <h2 className="font-serif text-2xl sm:text-3xl font-bold text-[#0B132B]">
+                <h2 className="font-sans font-medium text-2xl sm:text-3xl text-[#0B132B]">
                   Day-by-Day Experience
                 </h2>
               </div>
@@ -101,14 +101,14 @@ Hello! I would like to check availability and request a private quote for this i
                       className="w-full p-5 sm:p-6 text-left flex items-center justify-between gap-4 hover:bg-neutral-50 transition-colors"
                     >
                       <div className="flex items-center gap-4">
-                        <span className="w-10 h-10 bg-black text-[#DFCA8A] font-serif font-light text-sm flex items-center justify-center shrink-0">
+                        <span className="w-10 h-10 bg-black text-[#DFCA8A] font-sans font-medium text-sm flex items-center justify-center shrink-0">
                           {String(day.dayNumber).padStart(2, "0")}
                         </span>
                         <div>
                           <div className="text-[10px] font-bold uppercase tracking-wider text-[#855D25]">
                             Day {day.dayNumber}
                           </div>
-                          <h4 className="font-serif text-lg sm:text-xl font-normal text-neutral-900">
+                          <h4 className="font-sans font-medium text-lg sm:text-xl text-neutral-900">
                             {day.title}
                           </h4>
                         </div>
@@ -192,7 +192,7 @@ Hello! I would like to check availability and request a private quote for this i
               <div className="text-xs font-bold uppercase tracking-widest text-[#855D25]">
                 Visual Journal
               </div>
-              <h2 className="font-serif text-2xl font-bold text-[#0B132B]">
+              <h2 className="font-sans font-medium text-2xl text-[#0B132B]">
                 Moments Along This Journey
               </h2>
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
@@ -218,7 +218,7 @@ Hello! I would like to check availability and request a private quote for this i
               <span className="text-[10px] font-bold uppercase tracking-widest text-[#855D25] block">
                 Bespoke Private Experience
               </span>
-              <h3 className="font-serif text-xl font-bold text-[#0B132B] mt-0.5">
+              <h3 className="font-sans font-medium text-xl text-[#0B132B] mt-0.5">
                 Reserve or Inquire
               </h3>
               <p className="text-xs text-gray-500 mt-1">

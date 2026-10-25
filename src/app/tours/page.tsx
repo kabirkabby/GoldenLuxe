@@ -47,7 +47,7 @@ export default function ToursListingPage() {
               </span>
             </div>
 
-            <h1 className="font-serif text-4xl sm:text-6xl font-light tracking-tight text-white leading-tight">
+            <h1 className="font-sans font-medium text-4xl sm:text-6xl tracking-tight text-white leading-tight">
               Curated Amritsar <br />
               <span className="gold-gradient-text italic font-light">Private Tour Packages</span>
             </h1>
@@ -139,7 +139,7 @@ export default function ToursListingPage() {
             <span className="text-xs font-bold uppercase tracking-widest text-[#DFCA8A]">
               Personalized Tailored Journeys
             </span>
-            <h3 className="font-serif text-3xl sm:text-4xl font-light">
+            <h3 className="font-sans font-medium text-2xl sm:text-3xl">
               Looking for a Customized Itinerary?
             </h3>
             <p className="text-xs sm:text-sm text-neutral-300 leading-relaxed font-light">

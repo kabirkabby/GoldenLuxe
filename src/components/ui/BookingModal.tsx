@@ -72,7 +72,7 @@ Please share tour availability and customized pricing.`;
           <div className="text-[10px] uppercase tracking-[0.24em] text-[#DFCA8A] font-semibold">
             Bespoke Concierge Reservation
           </div>
-          <h3 className="font-serif text-2xl sm:text-3xl font-light text-white mt-1">
+          <h3 className="font-sans font-medium text-2xl sm:text-3xl text-white mt-1">
             Request Private Tour Itinerary
           </h3>
           <p className="text-xs text-neutral-300 font-light mt-1.5">
@@ -87,7 +87,7 @@ Please share tour availability and customized pricing.`;
               <div className="w-14 h-14 border border-[#25D366] text-[#25D366] mx-auto flex items-center justify-center">
                 <CheckOrnamentIcon className="w-8 h-8" />
               </div>
-              <h4 className="font-serif text-2xl font-normal text-neutral-900">
+              <h4 className="font-sans font-medium text-2xl text-neutral-900">
                 Inquiry Generated!
               </h4>
               <p className="text-sm text-neutral-600 max-w-sm mx-auto leading-relaxed font-light">

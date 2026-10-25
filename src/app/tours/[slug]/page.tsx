@@ -81,7 +81,7 @@ export default async function TourDetailPage({
                 </span>
               </div>
 
-              <h1 className="font-serif text-3xl sm:text-5xl lg:text-6xl font-light tracking-tight text-white leading-tight">
+              <h1 className="font-sans font-medium text-3xl sm:text-5xl lg:text-6xl tracking-tight text-white leading-tight">
                 {tour.title}
               </h1>
 
