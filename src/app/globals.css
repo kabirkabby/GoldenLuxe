@@ -1,26 +1,95 @@
 @import "tailwindcss";
 
+@theme {
+  --font-serif: var(--font-serif), "Cormorant Garamond", Georgia, serif;
+  --font-sans: var(--font-sans), "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+
+  --color-gold-50: #fbf9f1;
+  --color-gold-100: #f6f0db;
+  --color-gold-200: #ecdeb6;
+  --color-gold-300: #dfc88a;
+  --color-gold-400: #d2b060;
+  --color-gold-500: #c2983b;
+  --color-gold-600: #a77c2d;
+  --color-gold-700: #855d25;
+  --color-gold-800: #6f4b23;
+  --color-gold-900: #5d3f21;
+
+  --color-navy-950: #060b18;
+  --color-navy-900: #0b132b;
+  --color-navy-800: #141f42;
+  --color-navy-700: #1d2d5a;
+
+  --color-maroon-950: #220509;
+  --color-maroon-900: #3e0910;
+  --color-maroon-800: #58111a;
+  --color-maroon-700: #721824;
+  --color-maroon-600: #8d202e;
+  --color-maroon-500: #ad2b3d;
+  --color-maroon-100: #fcedef;
+  --color-maroon-50: #fdf5f6;
+
+  --color-sand-50: #faf8f5;
+  --color-sand-100: #f3efe7;
+  --color-sand-200: #e8dfd3;
+  --color-sand-300: #d6c6b3;
+
+  --color-terracotta-500: #b4533c;
+  --color-terracotta-600: #983f2a;
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --background: #FFFFFF;
+  --foreground: #111827;
 }
 
 body {
-  background: var(--background);
+  background-color: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+}
+
+/* Subtle luxury grain / pattern helper */
+.bg-subtle-pattern {
+  background-image: radial-gradient(rgba(194, 152, 59, 0.08) 1px, transparent 0);
+  background-size: 24px 24px;
+}
+
+.gold-gradient-text {
+  background: linear-gradient(135deg, #d2b060 0%, #c2983b 50%, #855d25 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.maroon-gradient-text {
+  background: linear-gradient(135deg, #91202e 0%, #58111a 50%, #3b0910 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@keyframes floatSlow {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes floatReverse {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(8px);
+  }
+}
+
+.animate-float-slow {
+  animation: floatSlow 6s ease-in-out infinite;
+}
+
+.animate-float-reverse {
+  animation: floatReverse 7s ease-in-out infinite;
 }
