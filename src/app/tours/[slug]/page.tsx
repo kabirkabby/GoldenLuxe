@@ -53,32 +53,11 @@ export default async function TourDetailPage({
         <div className="absolute top-0 right-0 w-96 h-96 bg-[#C2983B]/10 rounded-full blur-3xl pointer-events-none" />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-8 relative z-10">
-          {/* Breadcrumbs */}
-          <nav className="flex items-center gap-2 text-xs text-gray-400 mb-6">
-            <Link href="/" className="hover:text-white transition-colors">
-              Home
-            </Link>
-            <span>/</span>
-            <Link href="/tours" className="hover:text-white transition-colors">
-              Curated Itineraries
-            </Link>
-            <span>/</span>
-            <span className="text-[#DFCA8A] font-medium">{tour.title}</span>
-          </nav>
-
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
             <div className="lg:col-span-8 space-y-4">
-              <div className="flex flex-wrap items-center gap-2.5">
-                <span className="px-3 py-1 bg-[#C2983B] text-black text-xs font-semibold uppercase tracking-wider">
-                  Private Journey
-                </span>
-                <span className="px-3 py-1 bg-white/10 text-[#ECDEB6] text-xs font-semibold tracking-wide border border-white/20">
-                  {tour.category}
-                </span>
-                <span className="px-3 py-1 bg-white/10 text-white text-xs font-medium flex items-center gap-1.5">
-                  <ClockIcon className="w-3.5 h-3.5 text-[#DFCA8A]" />
-                  <span>{tour.durationLabel}</span>
-                </span>
+              <div className="flex items-center gap-2 text-xs font-medium text-white bg-white/10 px-3 py-1.5 rounded-full border border-white/20 w-fit">
+                <ClockIcon className="w-3.5 h-3.5 text-[#DFCA8A]" />
+                <span>{tour.durationLabel}</span>
               </div>
 
               <h1 className="font-sans font-medium text-3xl sm:text-5xl lg:text-6xl tracking-tight text-white leading-tight">
@@ -113,10 +92,7 @@ export default async function TourDetailPage({
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
               <div className="absolute bottom-4 left-4 right-4 text-xs text-white">
-                <span className="text-[10px] uppercase font-bold tracking-wider text-[#DFCA8A] block">
-                  Private Journey
-                </span>
-                <span>Unrushed, personalized pacing throughout</span>
+                <span className="font-light">Unrushed, personalized pacing throughout</span>
               </div>
             </div>
           </div>

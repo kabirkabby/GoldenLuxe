@@ -25,8 +25,8 @@ export function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // When on homepage and at the top, navbar is transparent
-  const isTransparent = isHomePage && !isScrolled;
+  // When on homepage, at the top, and mobile menu closed, navbar is transparent
+  const isTransparent = isHomePage && !isScrolled && !mobileMenuOpen;
 
   return (
     <header
@@ -38,47 +38,8 @@ export function Navbar() {
           : "bg-white/95 backdrop-blur-md border-b border-neutral-100 shadow-[0_2px_15px_rgba(0,0,0,0.04)]"
       }`}
     >
-      {/* Top Bar */}
-      <div
-        className={`text-xs py-2.5 sm:py-3 px-4 sm:px-6 lg:px-8 border-b transition-colors duration-300 ${
-          isTransparent
-            ? "bg-black/35 backdrop-blur-sm text-neutral-200 border-white/10"
-            : "bg-black text-neutral-300 border-neutral-800/80"
-        }`}
-      >
-        <div className="max-w-[1480px] mx-auto flex items-center justify-between">
-          <div className="flex items-center gap-2.5">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#C2983B] animate-pulse" />
-            <span
-              className={`tracking-[0.14em] uppercase text-[11px] sm:text-xs font-medium transition-colors ${
-                isTransparent ? "text-white/90" : "text-neutral-200"
-              }`}
-            >
-              Amritsar Private Concierge & Chauffeur Tours
-            </span>
-          </div>
-          <div
-            className={`hidden md:flex items-center gap-6 text-xs transition-colors ${
-              isTransparent ? "text-white/80" : "text-neutral-400"
-            }`}
-          >
-            <a
-              href="https://wa.me/?text=Hello%20Golden%20Luxe%20Tours,%20I%20would%20like%20to%20inquire%20about%20a%20private%20tour%20in%20Amritsar."
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2 hover:text-[#C2983B] transition-colors"
-            >
-              <WhatsAppIcon className="w-3.5 h-3.5 text-[#25D366]" />
-              <span>Direct WhatsApp Concierge</span>
-            </a>
-            <span className={isTransparent ? "text-white/30" : "text-neutral-700"}>|</span>
-            <span className="tracking-wide">Fluent English & Punjabi Assistance</span>
-          </div>
-        </div>
-      </div>
-
       {/* Main navigation bar */}
-      <div className="max-w-[1480px] mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-5 flex items-center justify-between">
+      <div className="max-w-[1480px] mx-auto px-4 sm:px-6 lg:px-8 py-3.5 sm:py-4.5 flex items-center justify-between">
         {/* Brand Identity */}
         <Link href="/" className="group flex items-center">
           <span

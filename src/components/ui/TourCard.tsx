@@ -15,7 +15,7 @@ export function TourCard({ tour, featured = false }: TourCardProps) {
   );
 
   return (
-    <div className={`group rounded-2xl bg-white border border-neutral-200/90 overflow-hidden shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-[0_20px_40px_rgba(0,0,0,0.08)] hover:border-[#C2983B]/60 hover:-translate-y-1.5 transition-all duration-500 flex flex-col ${featured ? "lg:flex-row lg:col-span-2" : ""}`}>
+    <div className={`group rounded-2xl bg-white border border-neutral-200/90 overflow-hidden shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-[0_20px_40px_rgba(0,0,0,0.08)] hover:border-[#C2983B]/60 hover:-translate-y-1.5 transition-all duration-500 flex flex-col w-full ${featured ? "lg:flex-row lg:col-span-2" : ""}`}>
       {/* Image container */}
       <div className={`relative overflow-hidden bg-neutral-950 ${featured ? "lg:w-1/2 min-h-[340px]" : "h-72 w-full"}`}>
         <Image

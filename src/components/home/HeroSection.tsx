@@ -103,8 +103,8 @@ Hello! I would like to inquire about this experience and receive a customized qu
         <div className="absolute inset-0 z-10 bg-black/40 pointer-events-none" />
       </div>
 
-      {/* Main Content: Left Copy + Right Form (Reduced side spacing) */}
-      <div className="relative z-20 max-w-[1480px] mx-auto px-4 sm:px-6 lg:px-8 w-full pt-28 pb-16 sm:pt-36 sm:pb-20">
+      {/* Main Content: Left Copy + Right Form (Reduced side spacing, extra mobile top padding for clearance) */}
+      <div className="relative z-20 max-w-[1480px] mx-auto px-4 sm:px-6 lg:px-8 w-full pt-36 pb-16 sm:pt-40 sm:pb-20 lg:pt-32">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
 
           {/* Left Column: Hero Text & CTAs */}

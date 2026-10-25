@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { TOURS_DATA } from "@/data/tours";
@@ -20,6 +20,14 @@ export default function HomePage() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState<string>("All");
   const [activeTestimonial, setActiveTestimonial] = useState<number>(0);
+  const testimonialsScrollRef = useRef<HTMLDivElement>(null);
+
+  const scrollContainer = (ref: React.RefObject<HTMLDivElement | null>, direction: "left" | "right") => {
+    if (ref.current) {
+      const scrollAmount = direction === "left" ? -420 : 420;
+      ref.current.scrollBy({ left: scrollAmount, behavior: "smooth" });
+    }
+  };
 
   const categories = ["All", "Spiritual & Iconic", "Rural & Cultural", "Sacred Pilgrimage", "Culinary & Living", "Old City Flavors"];
 
@@ -81,7 +89,7 @@ export default function HomePage() {
           </div>
 
           {/* Category Tabs */}
-          <div className="flex items-center gap-2 overflow-x-auto pb-4 mb-10 scrollbar-none">
+          <div className="flex items-center gap-2 overflow-x-auto pb-4 mb-8 scrollbar-none">
             {categories.map((cat) => (
               <button
                 key={cat}
@@ -96,17 +104,22 @@ export default function HomePage() {
             ))}
           </div>
 
-          {/* Tours Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {/* Tours: Horizontal scrolling on mobile (< md), previous 3-column Grid on desktop (md:/lg:) */}
+          <div className="flex items-stretch gap-6 overflow-x-auto pb-6 scrollbar-none snap-x snap-mandatory -mx-4 px-4 sm:-mx-8 sm:px-8 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-8 md:overflow-visible md:pb-0 md:mx-0 md:px-0">
             {filteredTours.map((tour) => (
-              <TourCard key={tour.id} tour={tour} />
+              <div
+                key={tour.id}
+                className="w-[310px] sm:w-[370px] shrink-0 snap-start flex md:w-auto md:shrink md:snap-align-none"
+              >
+                <TourCard tour={tour} />
+              </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* 3. WHY PEOPLE TRAVEL WITH GOLDEN LUXE TOURS (IMAGE ON LEFT, TEXT ON RIGHT, 4 POINTERS 2-IN-A-ROW) */}
-      <section className="py-16 sm:py-16 bg-neutral-200/40 border-b border-neutral-100">
+      {/* 3. WHY PEOPLE TRAVEL WITH GOLDEN LUXE TOURS (IMAGE ON LEFT, TEXT ON RIGHT, 4 TRUST METRICS) */}
+      <section className="py-16 sm:py-20 bg-neutral-200/40 border-b border-neutral-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
 
@@ -115,7 +128,7 @@ export default function HomePage() {
               <DistinctionSlider />
             </div>
 
-            {/* Right Column: Headings & 4 Pointers (2 in a row) */}
+            {/* Right Column: Headings & 4 Trust Metrics (2 in a row) */}
             <div className="lg:col-span-7 space-y-6">
               <div>
                 <div className="text-[11px] uppercase tracking-[0.24em] text-[#855D25] font-semibold">
@@ -129,50 +142,46 @@ export default function HomePage() {
                 </p>
               </div>
 
-              {/* 4 Pointers - 2 in a row (2x2 grid) with reduced content */}
+              {/* 4 Pointers - 2 in a row (2x2 grid) with unified heading typography (no highlighted numbers or icons) */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5 pt-2">
 
-                {/* Pointer 1 */}
-                <div className="p-5 rounded-xl bg-neutral-50/70 border border-neutral-200/80 hover:border-[#C2983B] hover:bg-white transition-all duration-300">
-                  <div className="font-sans font-medium text-base text-[#C2983B] flex items-center gap-2">
-                    <span>01</span>
-                    <span className="text-neutral-900 font-medium text-sm sm:text-base">Private Chauffeur Fleet</span>
-                  </div>
-                  <p className="text-xs text-neutral-600 font-light leading-relaxed mt-2">
-                    Immaculate Toyota Innova Crystas with chilled water, phone chargers, and polite, punctual chauffeurs.
+                {/* Pointer 1: 8+ Years of Experience */}
+                <div className="p-6 rounded-xl bg-white border border-neutral-200/80 hover:border-[#C2983B] transition-all duration-300 shadow-xs">
+                  <h3 className="font-sans font-medium text-base sm:text-lg text-neutral-900 leading-snug">
+                    8+ Years of Experience
+                  </h3>
+                  <p className="text-xs sm:text-sm text-neutral-600 font-light leading-relaxed mt-2.5">
+                    Deep local heritage insight, refined concierge care, and unhurried private journeys across Amritsar and Punjab.
                   </p>
                 </div>
 
-                {/* Pointer 2 */}
-                <div className="p-5 rounded-xl bg-neutral-50/70 border border-neutral-200/80 hover:border-[#C2983B] hover:bg-white transition-all duration-300">
-                  <div className="font-sans font-medium text-base text-[#C2983B] flex items-center gap-2">
-                    <span>02</span>
-                    <span className="text-neutral-900 font-medium text-sm sm:text-base">VIP Wagah Coordination</span>
-                  </div>
-                  <p className="text-xs text-neutral-600 font-light leading-relaxed mt-2">
-                    Strategic arrival timing for the retreat ceremony, ensuring stress-free stadium entry and parking.
+                {/* Pointer 2: 500+ Global Guests */}
+                <div className="p-6 rounded-xl bg-white border border-neutral-200/80 hover:border-[#C2983B] transition-all duration-300 shadow-xs">
+                  <h3 className="font-sans font-medium text-base sm:text-lg text-neutral-900 leading-snug">
+                    Trusted by 500+ Guests Across the Globe
+                  </h3>
+                  <p className="text-xs sm:text-sm text-neutral-600 font-light leading-relaxed mt-2.5">
+                    Trusted by international travelers and NRI families from the UK, USA, Canada, Australia, and India.
                   </p>
                 </div>
 
-                {/* Pointer 3 */}
-                <div className="p-5 rounded-xl bg-neutral-50/70 border border-neutral-200/80 hover:border-[#C2983B] hover:bg-white transition-all duration-300">
-                  <div className="font-sans font-medium text-base text-[#C2983B] flex items-center gap-2">
-                    <span>03</span>
-                    <span className="text-neutral-900 font-medium text-sm sm:text-base">Sacred Gurudwara Etiquette</span>
-                  </div>
-                  <p className="text-xs text-neutral-600 font-light leading-relaxed mt-2">
-                    Respectful guidance on parikrama protocols, langar seva, and peaceful evening Palki Sahib darshans.
+                {/* Pointer 3: 5-Star Rating */}
+                <div className="p-6 rounded-xl bg-white border border-neutral-200/80 hover:border-[#C2983B] transition-all duration-300 shadow-xs">
+                  <h3 className="font-sans font-medium text-base sm:text-lg text-neutral-900 leading-snug">
+                    5-Star Verified Guest Rating
+                  </h3>
+                  <p className="text-xs sm:text-sm text-neutral-600 font-light leading-relaxed mt-2.5">
+                    Pristine private chauffeur fleet, punctual timing, transparent pricing, and 100% peace of mind throughout.
                   </p>
                 </div>
 
-                {/* Pointer 4 */}
-                <div className="p-5 rounded-xl bg-neutral-50/70 border border-neutral-200/80 hover:border-[#721824] hover:bg-white transition-all duration-300">
-                  <div className="font-sans font-medium text-base text-[#721824] flex items-center gap-2">
-                    <span>04</span>
-                    <span className="text-neutral-900 font-medium text-sm sm:text-base">Kuch Khaas Home Dining</span>
-                  </div>
-                  <p className="text-xs text-neutral-600 font-light leading-relaxed mt-2">
-                    Authentic home-cooked Punjabi meals shared with a welcoming family around a private dining table.
+                {/* Pointer 4: Homely Experience */}
+                <div className="p-6 rounded-xl bg-white border border-neutral-200/80 hover:border-[#721824] transition-all duration-300 shadow-xs">
+                  <h3 className="font-sans font-medium text-base sm:text-lg text-neutral-900 leading-snug">
+                    Homely Personal Experience
+                  </h3>
+                  <p className="text-xs sm:text-sm text-neutral-600 font-light leading-relaxed mt-2.5">
+                    Warm, attentive personal care from arrival to departure, including our private Kuch Khaas family dining table.
                   </p>
                 </div>
 
@@ -256,15 +265,16 @@ export default function HomePage() {
               </div>
             </div>
 
-            {/* Right Visual: Clean Image without Text or Overlay Badges */}
-            <div className="lg:col-span-5 relative">
-              <div className="relative h-[380px] sm:h-[460px] w-full rounded-2xl overflow-hidden shadow-2xl border border-white/15 bg-neutral-950 group">
+            {/* Right Visual: Clean Image without Text or Overlay Badges (Uncropped from all sides) */}
+            <div className="lg:col-span-5 relative flex items-center justify-center">
+              <div className="relative w-full max-w-[480px] rounded-2xl overflow-hidden shadow-2xl border border-white/15 bg-black/40 p-2 sm:p-2.5">
                 <Image
-                  src="/images/kuch-khaas/dal-makhani-kadai.jpg"
-                  alt="Kuch Khaas authentic slow-simmered Dal Makhani in traditional copper kadai"
-                  fill
+                  src="/images/kuch-khaas/pav-bhaji-thali.jpg"
+                  alt="Kuch Khaas authentic home-cooked feast"
+                  width={1024}
+                  height={977}
+                  className="w-full h-auto object-contain rounded-xl"
                   sizes="(max-width: 1024px) 100vw, 42vw"
-                  className="object-cover group-hover:scale-105 transition-transform duration-700 brightness-[0.96]"
                 />
               </div>
             </div>
@@ -278,13 +288,13 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
 
-            {/* Visual Frame: 6-Second Food Trail Slideshow */}
-            <div className="lg:col-span-6 order-2 lg:order-1">
+            {/* Visual Frame: 6-Second Food Trail Slideshow (First on mobile & desktop) */}
+            <div className="lg:col-span-6 order-1">
               <FoodTrailSlider />
             </div>
 
-            {/* Content */}
-            <div className="lg:col-span-6 order-1 lg:order-2 space-y-6">
+            {/* Content (Second on mobile & desktop) */}
+            <div className="lg:col-span-6 order-2 space-y-6">
               <div className="text-[11px] uppercase tracking-[0.24em] text-[#855D25] font-semibold">
                 The Iconic Food Trail
               </div>
@@ -353,24 +363,54 @@ export default function HomePage() {
       <section className="py-24 sm:py-32 bg-white border-b border-neutral-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-8">
 
-          <div className="text-center max-w-xl mx-auto space-y-2 mb-16 sm:mb-20">
-            <div className="text-[11px] uppercase tracking-[0.24em] text-[#855D25] font-semibold">
-              Guest Reflections
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12 sm:mb-16">
+            <div className="space-y-2">
+              <div className="text-[11px] uppercase tracking-[0.24em] text-[#855D25] font-semibold">
+                Guest Reflections
+              </div>
+              <h2 className="font-sans font-medium text-3xl sm:text-4xl lg:text-5xl text-neutral-950">
+                Loved by NRIs & Discerning Visitors
+              </h2>
+              <p className="text-xs sm:text-sm text-neutral-500 font-light max-w-xl">
+                Personalized hospitality that turns a sacred pilgrimage into a cherished family memory.
+              </p>
             </div>
-            <h2 className="font-sans font-medium text-3xl sm:text-4xl lg:text-5xl text-neutral-950">
-              Loved by NRIs & Discerning Visitors
-            </h2>
-            <p className="text-xs sm:text-sm text-neutral-500 font-light">
-              Personalized hospitality that turns a sacred pilgrimage into a cherished family memory.
-            </p>
+
+            {/* Desktop Scroll Arrow Controls for Testimonials */}
+            <div className="hidden sm:flex items-center gap-2">
+              <button
+                type="button"
+                onClick={() => scrollContainer(testimonialsScrollRef, "left")}
+                className="w-9 h-9 rounded-full border border-neutral-300 hover:border-black hover:bg-neutral-100 flex items-center justify-center text-neutral-700 hover:text-black transition-colors"
+                aria-label="Previous testimonials"
+              >
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                </svg>
+              </button>
+              <button
+                type="button"
+                onClick={() => scrollContainer(testimonialsScrollRef, "right")}
+                className="w-9 h-9 rounded-full border border-neutral-300 hover:border-black hover:bg-neutral-100 flex items-center justify-center text-neutral-700 hover:text-black transition-colors"
+                aria-label="Next testimonials"
+              >
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </button>
+            </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {/* Horizontally scrolling testimonials */}
+          <div
+            ref={testimonialsScrollRef}
+            className="flex items-stretch gap-6 overflow-x-auto pb-6 pt-2 scrollbar-none snap-x snap-mandatory -mx-4 px-4 sm:-mx-8 sm:px-8"
+          >
             {testimonials.map((testimonial, idx) => (
               <div
                 key={idx}
                 onMouseEnter={() => setActiveTestimonial(idx)}
-                className={`p-8 rounded-2xl bg-white border transition-all duration-500 flex flex-col justify-between space-y-6 ${activeTestimonial === idx
+                className={`w-[310px] sm:w-[380px] lg:w-[420px] shrink-0 snap-start p-8 rounded-2xl bg-white border transition-all duration-500 flex flex-col justify-between space-y-6 ${activeTestimonial === idx
                   ? "border-[#C2983B] shadow-[0_20px_45px_rgba(0,0,0,0.08)] -translate-y-2"
                   : "border-neutral-200/90 shadow-sm hover:border-[#C2983B] hover:-translate-y-1.5"
                   }`}
@@ -394,7 +434,7 @@ export default function HomePage() {
                   <div className="text-[11px] text-neutral-500 font-light mt-0.5">
                     {testimonial.location}
                   </div>
-                  <div className="text-[10px] text-neutral-400 font-mono mt-1">
+                  <div className="text-[10px] text-neutral-400 font-sans mt-1">
                     {testimonial.date}
                   </div>
                 </div>
